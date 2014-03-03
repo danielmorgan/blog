@@ -1,27 +1,31 @@
 {
   "locals": {
     "url": "http://danielmorgan.co.uk/",
+    "title": "Daniel Morgan &mdash; Web Developer from Lancaster, England",
     "name": "Daniel Morgan",
     "owner": "Daniel Morgan",
     "description": "I'm a Web Developer from Lancaster, England with 7 years experience designing and building websites."
   },
   "plugins": [
     "./plugins/paginator.coffee",
-    "./node_modules/wintersmith-handlebars/wintersmith-handlebars.coffee"
+    "wintersmith-handlebars"
   ],
   "require": {
     "moment": "moment",
     "_": "underscore",
     "typogr": "typogr"
   },
-  "jade": {
-    "pretty": true
-  },
   "markdown": {
     "smartLists": true,
     "smartypants": true
   },
   "paginator": {
+    "template": "index.hbs",
+    "first": "index.html",
     "perPage": 5
+  },
+  "handlebars": {
+    "helperDir": "helpers",
+    "partialDir": "partials"
   }
 }

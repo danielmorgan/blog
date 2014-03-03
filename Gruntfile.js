@@ -3,6 +3,10 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		clean: {
+			build: ['build']
+		},
+
 		wintersmith: {
 			build: {
 				options: {
@@ -18,21 +22,33 @@ module.exports = function(grunt) {
 			}
 		},
 
-		ghpages: {
+		'gh-pages': {
 			options: {
 				base: 'build'
 			},
 			src: ['**']
-		}
+		},
 
+		watch: {
+			options: {
+				livereload: true
+			},
+			livereload: {
+				files: ['index.html']
+			},
+			wintersmith: {
+				files: ['config.json', './templates/**', './contents/**'],
+				tasks: ['clean', 'wintersmith:build']
+			}
+		}
 
 	});
 
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('test', ['wintersmith:build', 'wintersmith:preview']);
-	grunt.registerTask('build', ['wintersmith:build']);
-	grunt.registerTask('deploy', ['wintersmith:build', 'ghpages']);
+	grunt.registerTask('test', ['clean', 'wintersmith:build', 'wintersmith:preview']);
+	grunt.registerTask('build', ['clean', 'wintersmith:build']);
+	grunt.registerTask('deploy', ['clean', 'wintersmith:build', 'gh-pages']);
 
 };

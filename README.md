@@ -14,12 +14,17 @@ The default [wintersmith](https://github.com/jnordberg/wintersmith) template
 ## How to (a personal reminder)
 
 ### Test new version locally
-Build from source then run a local server.
+Clean `build/`, build from source then run a local server.
 
 	grunt test
 
+### Work on the website live
+Watch for changes to source files then clean `build/` and build from source.
+
+	grunt watch
+
 ### Commit changes
-Build from source, commit, then push to GitHub.
+Clean `build/`, build from source, commit, then push to GitHub.
 
 	grunt build
 	git add .
@@ -27,6 +32,6 @@ Build from source, commit, then push to GitHub.
 	git push origin master
 
 ### Deploy to live site
-Build from source, then commit to gh-pages branch.
+Clean `build/`, build from source, then commit to gh-pages branch.
 
 	grunt deploy
