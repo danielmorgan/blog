@@ -29,6 +29,15 @@ module.exports = function(grunt) {
 			src: ['**']
 		},
 
+		'file-creator': {
+			'CNAME': {
+				'build/CNAME': function(fs, fd, done) {
+					fs.writeSync(fd, 'danielmorgan.co.uk');
+					done();
+				}
+			}
+		},
+
 		watch: {
 			options: {
 				livereload: true
@@ -49,6 +58,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('test', ['clean', 'wintersmith:build', 'wintersmith:preview']);
 	grunt.registerTask('build', ['clean', 'wintersmith:build']);
-	grunt.registerTask('deploy', ['clean', 'wintersmith:build', 'gh-pages']);
+	grunt.registerTask('deploy', ['clean', 'wintersmith:build', 'file-creator', 'gh-pages']);
 
 };
