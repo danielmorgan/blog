@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		buildGhPages: {
 			production: {
 				options: {
-					dist: "build"
+					dist: "build/"
 				}
 			}
 		}
