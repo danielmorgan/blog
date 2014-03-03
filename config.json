@@ -1,9 +1,9 @@
 {
   "locals": {
-    "url": "http://localhost:8080",
-    "name": "The Wintersmith's blog",
-    "owner": "Someone",
-    "description": "Ramblings of an immor(t)al demigod"
+    "url": "http://danielmorgan.co.uk/",
+    "name": "Daniel Morgan's Blog",
+    "owner": "Daniel Morgan",
+    "description": "I'm a Web Developer from Lancaster, England with 7 years experience designing and building websites."
   },
   "plugins": [
     "./plugins/paginator.coffee"
