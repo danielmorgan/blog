@@ -6,7 +6,8 @@
     "description": "I'm a Web Developer from Lancaster, England with 7 years experience designing and building websites."
   },
   "plugins": [
-    "./plugins/paginator.coffee"
+    "./plugins/paginator.coffee",
+    "./node_modules/wintersmith-handlebars/wintersmith-handlebars.coffee"
   ],
   "require": {
     "moment": "moment",
@@ -21,6 +22,6 @@
     "smartypants": true
   },
   "paginator": {
-    "perPage": 3
+    "perPage": 5
   }
 }

@@ -18,21 +18,21 @@ module.exports = function(grunt) {
 			}
 		},
 
-		'gh-pages': {
+		ghpages: {
 			options: {
 				base: 'build'
 			},
 			src: ['**']
 		}
 
+
 	});
 
-	grunt.loadNpmTasks('grunt-wintersmith');
-	grunt.loadNpmTasks('grunt-gh-pages');
-	grunt.loadNpmTasks('grunt-git');
+
+	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('test', ['wintersmith:build', 'wintersmith:preview']);
 	grunt.registerTask('build', ['wintersmith:build']);
-	grunt.registerTask('deploy', ['wintersmith:build', 'gh-pages']);
+	grunt.registerTask('deploy', ['wintersmith:build', 'ghpages']);
 
 };

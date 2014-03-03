@@ -1,7 +1,7 @@
 ---
-title: README
-author: the-wintersmith
-date: 2013-04-30
+title: Hello World!
+author: daniel-morgan
+date: 2014-03-03
 template: article.jade
 ---
 
