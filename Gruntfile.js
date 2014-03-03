@@ -19,14 +19,13 @@ module.exports = function(grunt) {
 		},
 
 		buildGhPages: {
-			options: {
-				dist: 'build/',
-				build_branch: 'gh-pages',
-				pulll: true,
-				exclude: ['contents/', 'plugins/'],
-				copy_hidden: false
+			production: {
+				options: {
+					dist: "build"
+				}
 			}
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-build-gh-pages');
