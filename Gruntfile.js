@@ -18,19 +18,18 @@ module.exports = function(grunt) {
 			}
 		},
 
-		buildGhPages: {
-			production: {
-				options: {
-					dist: "build/"
-				}
-			}
+		'gh-pages': {
+			options: {
+				base: 'build'
+			},
+			src: ['**']
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-build-gh-pages');
 	grunt.loadNpmTasks('grunt-wintersmith');
+	grunt.loadNpmTasks('grunt-gh-pages');
 
-	grunt.registerTask('default', ['wintersmith:build', 'buildGhPages']);
+	grunt.registerTask('default', ['wintersmith:build', 'gh-pages']);
 
 };
