@@ -29,8 +29,10 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-wintersmith');
 	grunt.loadNpmTasks('grunt-gh-pages');
+	grunt.loadNpmTasks('grunt-git');
 
-	grunt.registerTask('default', ['wintersmith:build', 'wintersmith:preview']);
+	grunt.registerTask('test', ['wintersmith:build', 'wintersmith:preview']);
+	grunt.registerTask('build', ['wintersmith:build']);
 	grunt.registerTask('deploy', ['wintersmith:build', 'gh-pages']);
 
 };
